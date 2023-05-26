@@ -19,31 +19,31 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Celulares y tablets',
                 'slug'=> Str::slug('Celulares y tablets'),
-                'icon' => '<i class="fa-sharp fa-light fa-mobile-notch"></i>'
+                'icon' => '<i class="fas fa-mobile"></i>'
             ],
             
             [
                 'name' => 'Ceramica',
                 'slug'=> Str::slug('Ceramica'),
-                'icon' => '<i class="fa-sharp fa-light fa-brush"></i>'
+                'icon' => '<i class="fad fa-badge"></i>'
             ],
 
             [
                 'name' => 'Calzado',
                 'slug'=> Str::slug('Calzado'),
-                'icon' => '<i class="fa-sharp fa-light fa-boot-heeled"></i>'               
+                'icon' => '<i class="fas fa-boot"></i>'               
             ],
 
             [
                 'name' => 'Computación',
                 'slug'=> Str::slug('Computación'),
-                'icon' => '<i class="fa-sharp fa-light fa-laptop"></i>'
+                'icon' => '<i class="fas fa-computer-speaker"></i>'
             ],
 
             [
                 'name' => 'Moda',
                 'slug'=> Str::slug('Moda'),
-                'icon' => '<i class="fa-sharp fa-light fa-child-dress"></i>',
+                'icon' => '<i class="fas fa-tshirt"></i>',
             ],
         ];
 
