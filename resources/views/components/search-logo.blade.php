@@ -1,26 +1,9 @@
-@props(['size' => 35, 'color' => 'black'])
-
-@php
-    switch ($color) {
-        case 'black':
-            # code...
-            break;
-
-        case 'white':
-            # code...
-            break;
-        
-        default:
-            # code...
-            break;
-    }
-@endphp
-
+@props(['size' => 35, 'color' => '#ffffff'])
 
 
 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="{{$size}}" height="{{$size}}" viewBox="0,0,256,256"
 style="fill:#000000;">
-<g fill="#fffdfd" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+<g fill="{{$color}}" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
     font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
     <g transform="scale(2,2)">
