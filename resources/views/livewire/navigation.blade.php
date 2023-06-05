@@ -1,12 +1,7 @@
-<style>
-    #navigation-menu {
-        height: calc(100vh - 4rem);
-    }
-</style>
-
-<header class="bg-blueGray-800 sticky top-0 ">
+<header class="bg-blueGray-800 sticky top-0" x-data="dropdown()">
     <div class="container flex items-center h-16">
-        <a
+        <a :class="{'!bg-opacity-100 !text-cyan-300' : open}" 
+            x-on:click="show()"
             class="flex flex-col items-center justify-center px-4 bg-black bg-opacity-25 text-white cursor-pointer h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path lass="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -67,7 +62,7 @@
 
                     <!-- Settings Dropdown -->
                     <div class="ml-3 relative">
-                        <x-dropdown align="right" width="48">
+                        <x-dropdown algn="right" width="48">
                             <x-slot name="trigger">
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                     <button
@@ -138,12 +133,13 @@
         @livewire('dropdown-cart')
 
     </div>
-    <nav id="navigation-menu" class="bg-blueGray-400 bg-opacity-25 w-full absolute">
+    <nav id="navigation-menu"  x-cloak x-show="open" class="bg-blueGray-400 bg-opacity-25 w-full absolute">
         <div class="container h-full">
-            <div class="grid grid-cols-4 h-full relative">
+            <div x-on:click.away="close()" class="grid grid-cols-4 h-full relative">
                 <ul class="bg-gray-300 ">
                     @foreach ($categories as $category)
-                        <li class="text-blueGray-700 hover:bg-blueGray-600 hover:text-white"> <!-- texto de subcategorias -->
+                        <li class="navigation-link text-blueGray-700 hover:bg-blueGray-600 hover:text-white">
+                            <!-- texto de subcategorias -->
                             <a href=" " class="py-2 px-4 text-sm flex items-center">
                                 <span class="flex justify-center w-9">
                                     {!! $category->icon !!}
@@ -151,37 +147,20 @@
                                 {{ $category->name }}
                             </a>
 
-                            <div class="bg-yellow-500 absolute w-3/4 top-0 h-full right-0 hidden">
+                            <div class="navigation-submenu bg-blueGray-500 absolute w-3/4 top-0 h-full right-0 hidden">
+                                <x-navigation-subcategories :category="$category" />
                             </div>
                         </li>
                     @endforeach
                 </ul>
 
                 <div class="col-span-3 bg-blueGray-500">
-                    <div class="grid grid-cols-4">
-                        <div>
-                            <p class="text-lg font-bold text-center text-blueGray-900 mb-3"> 
-                                Subcategorias
-                            </p>
-
-                            <ul> 
-                                @foreach ($categories->first()->subcategories as $subcategory)
-                                    <li>
-                                        <a href=" " class="text-blueGray-900 font-semibold inline-block py-1 px-4 hover:bg-blueGray-600 hover:text-white">
-                                            {{$subcategory->name}}
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-
-                        <div class="col-span-3">
-                            <img class="h-94 w-full object-cover object-center" src="{{Storage::url($categories->first()->image)}}" alt="">
-                        </div>
-                    </div>
+                    <x-navigation-subcategories :category="$categories->first()" />
                 </div>
             </div>
 
         </div>
     </nav>
 </header>
+
+

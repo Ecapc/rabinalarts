@@ -1,8 +1,10 @@
 @import 'container.css';
+@import 'nav.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 
 [x-cloak] {
