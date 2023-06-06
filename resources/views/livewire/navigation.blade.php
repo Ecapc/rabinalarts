@@ -1,24 +1,26 @@
 <header class="bg-blueGray-800 sticky top-0" x-data="dropdown()">
-    <div class="container flex items-center h-16">
-        <a :class="{'!bg-opacity-100 !text-cyan-300' : open}" 
-            x-on:click="show()"
-            class="flex flex-col items-center justify-center px-4 bg-black bg-opacity-25 text-white cursor-pointer h-full">
+    <div class="container flex items-center h-16 justify-between md:justify-start">
+        <a :class="{ '!bg-opacity-100 !text-cyan-300': open }" x-on:click="show()"
+            class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-black bg-opacity-25 text-white cursor-pointer h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path lass="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <span>
+            <span class="text-sm hidden md:block">
                 Categorias
             </span>
         </a>
         <a href="/" class="mx-6">
             <x-application-mark class="block h-9 w-auto" />
         </a>
-        @livewire('search')
+
+        <div class="flex-1 hidden md:block">
+            @livewire('search')
+        </div>
 
         <div>
             @auth
-                <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <div class="hidden sm:flex sm:items-center sm:ml-6 hidden md:block">
                     <!-- Teams Dropdown -->
                     @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                         <div class="ml-3 relative">
@@ -129,13 +131,15 @@
                 </x-dropdown>
             @endauth
         </div>
-
-        @livewire('dropdown-cart')
+        <div class="hidden md:block">
+            @livewire('dropdown-cart')
+        </div>
 
     </div>
-    <nav id="navigation-menu"  x-cloak x-show="open" class="bg-blueGray-400 bg-opacity-25 w-full absolute">
-        <div class="container h-full">
-            <div x-on:click.away="close()" class="grid grid-cols-4 h-full relative">
+    <nav id="navigation-menu" x-cloak x-show="open" class="bg-blueGray-400 bg-opacity-25 w-full absolute">
+        {{-- Menu Navegador PC --}}
+        <div class="container h-full hidden md:block">
+            <div x-on:click.away="close()" class="grid grid-cols-4 h-full relative ">
                 <ul class="bg-gray-300 ">
                     @foreach ($categories as $category)
                         <li class="navigation-link text-blueGray-700 hover:bg-blueGray-600 hover:text-white">
@@ -158,9 +162,69 @@
                     <x-navigation-subcategories :category="$categories->first()" />
                 </div>
             </div>
+        </div>
 
+        {{-- Menu Mobil --}}
+        <div class="bg-white h-full overflow-y-auto">
+            <div class="container bg-blueGray-200 py-3 mb-2">
+                @livewire('search')
+            </div>
+            <ul>
+                @foreach ($categories as $category)
+                    <li class="text-blueGray-700 hover:bg-blueGray-600 hover:text-white">
+                        <!-- texto de subcategorias -->
+                        <a href=" " class="py-2 px-4 text-sm flex items-center">
+                            <span class="flex justify-center w-9">
+                                {!! $category->icon !!}
+                            </span>
+                            {{ $category->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+            <p class="text-trueGray-500 px-6 my-2">USUARIO</p>
+            @livewire('cart-mobil')
+
+            @auth
+                <a href="{{ route('profile.show') }}"
+                    class="py-2 px-4 text-sm flex items-center text-blueGray-700 hover:bg-blueGray-600 hover:text-white">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-id-card"></i>
+                    </span>
+                    Perfil
+                </a>
+
+                <a href=" "
+                    onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit()"
+                    class="py-2 px-4 text-sm flex items-center text-blueGray-700 hover:bg-blueGray-600 hover:text-white">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </span>
+                    Cerrar sesión
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                    @csrf
+                </form>
+            @else
+                <a href="{{ route('login') }}"
+                class="py-2 px-4 text-sm flex items-center text-blueGray-700 hover:bg-blueGray-600 hover:text-white" >
+                <span class="flex justify-center w-9">
+                    <i class="fas fa-user-circle"></i>
+                </span>
+                    Iniciar Sesión
+                </a>
+
+                <a href="{{ route('register') }}"
+                class="py-2 px-4 text-sm flex items-center text-blueGray-700 hover:bg-blueGray-600 hover:text-white" >
+                <span class="flex justify-center w-9">
+                    <i class="fas fa-fingerprint"></i>
+                </span>
+                    Registrate
+                </a>
+
+            @endauth
         </div>
     </nav>
 </header>
-
-
