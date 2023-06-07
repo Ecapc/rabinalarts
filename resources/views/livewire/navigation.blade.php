@@ -144,7 +144,7 @@
                     @foreach ($categories as $category)
                         <li class="navigation-link text-blueGray-700 hover:bg-blueGray-600 hover:text-white">
                             <!-- texto de subcategorias -->
-                            <a href=" " class="py-2 px-4 text-sm flex items-center">
+                            <a href="{{route('categories.show', $category )}}" class="py-2 px-4 text-sm flex items-center">
                                 <span class="flex justify-center w-9">
                                     {!! $category->icon !!}
                                 </span>
@@ -173,7 +173,7 @@
                 @foreach ($categories as $category)
                     <li class="text-blueGray-700 hover:bg-blueGray-600 hover:text-white">
                         <!-- texto de subcategorias -->
-                        <a href=" " class="py-2 px-4 text-sm flex items-center">
+                        <a href="{{route('categories.show', $category )}}" class="py-2 px-4 text-sm flex items-center">
                             <span class="flex justify-center w-9">
                                 {!! $category->icon !!}
                             </span>

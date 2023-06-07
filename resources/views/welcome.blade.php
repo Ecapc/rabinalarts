@@ -2,9 +2,12 @@
     <div class="container py-8 ">
         @foreach ($categories as $category)
             <section class="mb-6">
-                <h1 class="text-lg uppercase font-semibold text-white">
-                    {{ $category->name }}
-                </h1>
+                <div class="flex items-center mb-2 ">
+                    <h1 class="text-lg uppercase font-semibold text-white">
+                        {{ $category->name }}
+                    </h1>
+                    <a href="{{route('categories.show', $category )}}" class="text-cyan-400 ml-4 font-semibold hover:text-cyan-200 hover:underline ">Ver más...</a>
+                </div>
                 @livewire('category-products', ['category' => $category])
             </section>
         @endforeach
@@ -23,8 +26,7 @@
                         prev: '.glider-' + id + '~ .glider-prev',
                         next: '.glider-' + id + '~ .glider-next'
                     },
-                    responsive: [
-                        {
+                    responsive: [{
                             breakpoint: 640,
                             settings: {
                                 slidesToShow: 2.3,
