@@ -1,4 +1,4 @@
-<header class="bg-blueGray-800 sticky top-0" x-data="dropdown()">
+<header class="bg-blueGray-800 sticky top-0 z-50" x-data="dropdown()">
     <div class="container flex items-center h-16 justify-between md:justify-start">
         <a :class="{ '!bg-opacity-100 !text-cyan-300': open }" x-on:click="show()"
             class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-black bg-opacity-25 text-white cursor-pointer h-full">
@@ -20,7 +20,7 @@
 
         <div>
             @auth
-                <div class="hidden sm:flex sm:items-center sm:ml-6 hidden md:block">
+                <div class="hidden sm:flex sm:items-center sm:ml-6 md:block">
                     <!-- Teams Dropdown -->
                     @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                         <div class="ml-3 relative">

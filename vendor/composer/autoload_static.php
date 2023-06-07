@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe
+class ComposerStaticInit04c7644937563247418ac5aee254ed7b
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -580,7 +580,10 @@ class ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\WelcomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/WelcomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Livewire\\CartMobil' => __DIR__ . '/../..' . '/app/Http/Livewire/CartMobil.php',
+        'App\\Http\\Livewire\\CategoryProducts' => __DIR__ . '/../..' . '/app/Http/Livewire/CategoryProducts.php',
         'App\\Http\\Livewire\\DropdownCart' => __DIR__ . '/../..' . '/app/Http/Livewire/DropdownCart.php',
         'App\\Http\\Livewire\\Navigation' => __DIR__ . '/../..' . '/app/Http/Livewire/Navigation.php',
         'App\\Http\\Livewire\\Search' => __DIR__ . '/../..' . '/app/Http/Livewire/Search.php',
@@ -5253,6 +5256,7 @@ class ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe
         'Psy\\Sudo' => __DIR__ . '/..' . '/psy/psysh/src/Sudo.php',
         'Psy\\Sudo\\SudoVisitor' => __DIR__ . '/..' . '/psy/psysh/src/Sudo/SudoVisitor.php',
         'Psy\\SuperglobalsEnv' => __DIR__ . '/..' . '/psy/psysh/src/SuperglobalsEnv.php',
+        'Psy\\SystemEnv' => __DIR__ . '/..' . '/psy/psysh/src/SystemEnv.php',
         'Psy\\TabCompletion\\AutoCompleter' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/AutoCompleter.php',
         'Psy\\TabCompletion\\Matcher\\AbstractContextAwareMatcher' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/Matcher/AbstractContextAwareMatcher.php',
         'Psy\\TabCompletion\\Matcher\\AbstractDefaultParametersMatcher' => __DIR__ . '/..' . '/psy/psysh/src/TabCompletion/Matcher/AbstractDefaultParametersMatcher.php',
@@ -6485,6 +6489,7 @@ class ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe
         'Symfony\\Component\\String\\Inflector\\FrenchInflector' => __DIR__ . '/..' . '/symfony/string/Inflector/FrenchInflector.php',
         'Symfony\\Component\\String\\Inflector\\InflectorInterface' => __DIR__ . '/..' . '/symfony/string/Inflector/InflectorInterface.php',
         'Symfony\\Component\\String\\LazyString' => __DIR__ . '/..' . '/symfony/string/LazyString.php',
+        'Symfony\\Component\\String\\Resources\\WcswidthDataGenerator' => __DIR__ . '/..' . '/symfony/string/Resources/WcswidthDataGenerator.php',
         'Symfony\\Component\\String\\Slugger\\AsciiSlugger' => __DIR__ . '/..' . '/symfony/string/Slugger/AsciiSlugger.php',
         'Symfony\\Component\\String\\Slugger\\SluggerInterface' => __DIR__ . '/..' . '/symfony/string/Slugger/SluggerInterface.php',
         'Symfony\\Component\\String\\UnicodeString' => __DIR__ . '/..' . '/symfony/string/UnicodeString.php',
@@ -6808,10 +6813,10 @@ class ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf67a5930e1294d4455ae1eefdac5b0fe::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit04c7644937563247418ac5aee254ed7b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit04c7644937563247418ac5aee254ed7b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit04c7644937563247418ac5aee254ed7b::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit04c7644937563247418ac5aee254ed7b::$classMap;
 
         }, null, ClassLoader::class);
     }
