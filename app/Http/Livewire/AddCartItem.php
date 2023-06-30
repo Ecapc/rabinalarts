@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Livewire\CartMobil;
+use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Livewire\Component;
 
 
@@ -25,6 +27,9 @@ class AddCartItem extends Component
         $this->qty = $this->qty + 1;
     }
 
+    public function addItem(){
+        Cart::add(['id' => '293ad', 'name' => 'Product 1', 'qty' => 1, 'price' => 9.99, 'options' => ['size' => 'large']]);
+    }
 
     public function render()
     {

@@ -14,18 +14,19 @@
    </div>
 
    <div class="mt-2">
-      <p class="text-xl"> Color: </p>
-      <select class="form-control w-full"> 
-         <option value="" selected disabled>Seleccione un Color</option>   
-
-         @foreach ($colors as $color)
-             <option  value="{{$color->id}}">
-               {{$color->name}}
-             </option>
-         @endforeach
-      </select>
+    <p class="text-xl text-white">
+        Color
+    </p>
+    <select wire:model="color_id" class="form-control w-full">
+        <option value="" selected disabled>
+            Seleccionar color
+        </option>
+        @foreach ($colors as $color)
+            <option value="{{ $color->id }}"> {{ $color->name }} </option>
+        @endforeach
+    </select>
    </div>
-   
+
    <div class="flex text-white mt-4">
     <div class="mr-4">
         <x-secondary-button wire:click="decrement" disabled wire:loading.attr="disabled" wire:target="decrement"

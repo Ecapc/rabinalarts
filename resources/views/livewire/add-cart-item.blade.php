@@ -15,7 +15,8 @@
             </x-secondary-button>
         </div>
         <div class="flex-1">
-            <x-button-my class="w-full">
+            <x-button-my class="w-full"
+                wire:click="addItem">
                 Agregar al carrito de compras
             </x-button-my>
         </div>

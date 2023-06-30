@@ -1,6 +1,5 @@
 <?php
-
-
+#Pendiente de arreglar
 namespace App\Http\Livewire;
 
 use App\Models\Size;
