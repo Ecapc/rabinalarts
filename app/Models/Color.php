@@ -18,7 +18,7 @@ class Color extends Model
 
     #relacion muchos a muchos
     public function sizes(){
-        return $this->belongsToMany(Size::class);
+        return $this->belongsToMany(Size::class)->withPivot('quantity');
     }
 
 }
