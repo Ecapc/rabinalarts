@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
-
-use App\Http\Livewire\CartMobil;
-use Gloudemans\Shoppingcart\Contracts\Buyable;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 
 
