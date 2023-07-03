@@ -1,4 +1,5 @@
 <div x-data>
+
     <p class="text-xl text-white">
         Color
     </p>
@@ -7,11 +8,20 @@
             Seleccionar color
         </option>
         @foreach ($colors as $color)
-            <option value="{{ $color->id }}"> {{ $color->name }} </option>
+            <option value="{{ $color->id }}"> {{ __($color->name) }} </option>
         @endforeach
     </select>
 
-    <div class="flex text-white mt-4">
+    <p class="my-4 text-white">
+        <span class="font-semibold texl-lg"> Stock disponible:</span>
+        @if ($quantity)
+            {{$quantity}}
+        @else
+            {{ $product->stock }}
+        @endif
+    </p>
+
+    <div class="flex text-white">
         <div class="mr-4">
             <x-secondary-button wire:click="decrement" disabled wire:loading.attr="disabled" wire:target="decrement"
                 x-bind:disabled="$wire.qty <= 1">
@@ -23,11 +33,10 @@
                 +
             </x-secondary-button>
         </div>
-        
+
         <div class="flex-1">
-            <x-button-my
-            x-bind:disabled="!$wire.quantity"
-            class="w-full">
+            <x-button-my x-bind:disabled="!$wire.quantity" x-bind:disabled="$wire.qty > $wire.quantity" class="w-full"
+                wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem">
                 Agregar al carrito de compras
             </x-button-my>
         </div>

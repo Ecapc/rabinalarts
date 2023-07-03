@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+Route::get('prueba', function(){
+    Cart::destroy();
 });
  
