@@ -10,11 +10,7 @@
                     </span>
                 @else
                     <span class="inline-block w-2 h-2 mr-2 bg-red-600 rounded-full"></span>
-                @endif
-
-                
-
-                
+                @endif      
         </x-slot>
         <x-slot name='content'>
 
@@ -66,7 +62,7 @@
                         USD {{Cart::subtotal()}}
                     </p>
 
-                    <x-button-enlace class="w-full">
+                    <x-button-enlace href=" {{route('shopping-cart')}} " lass="w-full">
                         Ir al carrido de compras 
                     </x-button-enlace>
 
