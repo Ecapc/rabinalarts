@@ -20,8 +20,8 @@
                 <div class="flex">
                     <p class="text-white">Marca: <a class=" underline capitalize hover:text-yellow-500" href="">
                             {{ $product->brand->name }} </a></p>
-                    <p class="text-white ml-6">7 <i class="fas fa-star text-yellow-300 text-sm"></i></p>
-                    <a class="text-white ml-4 hover:text-yellow-400 underline" href=""> 39 reseñas</a>
+                    <p class="text-white ml-6"> 5 <i class="fas fa-star text-yellow-300 text-sm"></i></p>
+                    <a class="text-white ml-4 hover:text-yellow-400 underline" href=""> 0 reseñas</a>
                 </div>
                 <p class="text-2xl font-semibold text-white my-4">
                     USD {{ $product->price }}

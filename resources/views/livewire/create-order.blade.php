@@ -23,7 +23,7 @@
             <label class="bg-blueGray-600 rounded-lg shadow px-6 py-4 flex items-center mb-4 cursor-pointer">
                 <input x-model="envio_type" type="radio" value="1" name="envio_type" class="text-cyan-700">
                 <span class="text-white ml-2">
-                    Recojo en tienda (Direccion Tienda)
+                    Recojo en tienda
                 </span>
                 <span class="font-semibold text-green-400 ml-auto">
                     Gratis
@@ -97,10 +97,7 @@
             <hr>
 
             <p class="text-white text-sm mt-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab saepe veniam itaque tenetur hic minus rerum
-                officia consequatur id! Rem labore officiis quam dolorum iure nostrum, debitis maxime nesciunt culpa!
-                endo arma
-                konda aedas lorem
+                RabinalArts Handicraft Ceramic se compromete a proteger tu privacidad y cuidar tus datos personales. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos la información que recopilamos de los usuarios de nuestra tienda en línea
                 <a href="" class="font-semibold text-orange-300 ">Politicas y Privacidad</a>
             </p>
         </div>

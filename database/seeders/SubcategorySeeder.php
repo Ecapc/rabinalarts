@@ -20,46 +20,45 @@ class SubcategorySeeder extends Seeder
             #'Celulares y Smartphones'
             [
                 'category_id' => 1,
-                'name' => 'Celulares y Smartphones',
-                'slug'=> Str::slug('Celulares y Smartphones'),
+                'name' => 'Ollitas',
+                'slug'=> Str::slug('Ollitas'),
                 'color' => true,
             ],
 
             #'Smartphone'
             [
                 'category_id' => 1,
-                'name' => 'SmartPhones',
-                'slug'=> Str::slug('SmartPhones'),
-            ],
+                'name' => 'Floreros',
+                'slug'=> Str::slug('Floreros'),
+            ], 
 
-            #'SmartWatch'
             [
                 'category_id' => 1,
-                'name' => 'SmartWatch',
-                'slug'=> Str::slug('SmartWatch'),
-            ],    
+                'name' => 'Accesorios de Ceramica',
+                'slug'=> Str::slug('Accesorios de Ceramica'),
+            ], 
 
             /*Ceramica*/
             #'Reloj de Pared'
             [
                 'category_id' => 2,
-                'name' => 'Reloj de Pared',
-                'slug'=> Str::slug('Reloj de Pared'),
+                'name' => 'Mujer',
+                'slug'=> Str::slug('Mujer'),
                 'color' => true,
             ],
 
             #'Portalapiz'
             [
                 'category_id' => 2,
-                'name' => 'Portalapiz',
-                'slug'=> Str::slug('Portalapiz'),
+                'name' => 'Niño',
+                'slug'=> Str::slug('Niño'),
             ],
 
             #'Lampara'
             [
                 'category_id' => 2,
-                'name' => 'Lampara',
-                'slug'=> Str::slug('Lampara'),
+                'name' => 'Hombre',
+                'slug'=> Str::slug('Hombre'),
             ],
 
             /*Calzado*/
@@ -93,8 +92,8 @@ class SubcategorySeeder extends Seeder
             #'Laptop'
             [
                 'category_id' => 4,
-                'name' => 'Laptop',
-                'slug'=> Str::slug('Laptop'),
+                'name' => 'LLaveros',
+                'slug'=> Str::slug('LLaveros'),
                 'color' => true,
                 'size' => true,
             ],
@@ -102,43 +101,16 @@ class SubcategorySeeder extends Seeder
             #'PC'
             [
                 'category_id' => 4,
-                'name' => 'PC',
-                'slug'=> Str::slug('PC'),
+                'name' => 'Portalapicero',
+                'slug'=> Str::slug('Portalapicero'),
             ],
 
             #'Armada'
             [
                 'category_id' => 4,
-                'name' => 'Armada',
-                'slug'=> Str::slug('Armada'),
+                'name' => 'Pulseras',
+                'slug'=> Str::slug('Pulseras'),
             ],
-
-            /*Moda*/
-            #'Vestido'
-            [
-                'category_id' => 5,
-                'name' => 'Vestido',
-                'slug'=> Str::slug('Vestido'),
-                'color' => true,
-            ],
-
-            #'Corte'
-            [
-                'category_id' => 5,
-                'name' => 'Corte',
-                'slug'=> Str::slug('Corte'),
-                'color' => true,
-                'size' => true,
-            ],
-
-            #'Blusa'
-            [
-                'category_id' => 5,
-                'name' => 'Blusa',
-                'slug'=> Str::slug('Blusa'),
-                'color' => true,
-                'size' => true,
-            ]
         ];
 
         foreach ($subcategories as $subcategories){

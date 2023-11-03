@@ -1,7 +1,7 @@
-<header class="bg-blueGray-800 sticky top-0 z-50" x-data="dropdown()">
+<header class="bg-orange-300 sticky top-0 z-50" x-data="dropdown()">
     <div class="container flex items-center h-16 justify-between md:justify-start">
         <a :class="{ '!bg-opacity-100 !text-cyan-300': open }" x-on:click="show()"
-            class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-black bg-opacity-25 text-white cursor-pointer h-full">
+            class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-black bg-opacity-25 text-orange-900  cursor-pointer h-full">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                 <path lass="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16" />
@@ -11,7 +11,7 @@
             </span>
         </a>
         <a href="/" class="mx-6">
-            <x-application-mark class="block h-9 w-auto" />
+           <img class="h-14 " src=" {{asset('imgassist/LogoRA.png')}} " alt="">
         </a>
 
         <div class="flex-1 hidden md:block">
@@ -157,7 +157,6 @@
                         </li>
                     @endforeach
                 </ul>
-
                 <div class="col-span-3 bg-blueGray-500">
                     <x-navigation-subcategories :category="$categories->first()" />
                 </div>

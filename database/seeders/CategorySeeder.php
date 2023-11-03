@@ -17,40 +17,34 @@ class CategorySeeder extends Seeder
         $categories = [
 
             [
-                'name' => 'Celulares y tablets',
-                'slug'=> Str::slug('Celulares y tablets'),
+                'name' => 'Ceramica',
+                'slug'=> Str::slug('Ceramica'),
                 'icon' => '<i class="fas fa-mobile"></i>'
             ],
             
             [
-                'name' => 'Ceramica',
-                'slug'=> Str::slug('Ceramica'),
+                'name' => 'Calzado',
+                'slug'=> Str::slug('Calzado'),
                 'icon' => '<i class="fad fa-badge"></i>'
             ],
 
             [
-                'name' => 'Calzado',
-                'slug'=> Str::slug('Calzado'),
+                'name' => 'Ropa',
+                'slug'=> Str::slug('Ropa'),
                 'icon' => '<i class="fas fa-boot"></i>'               
             ],
 
             [
-                'name' => 'Computación',
-                'slug'=> Str::slug('Computación'),
+                'name' => 'Accesorios',
+                'slug'=> Str::slug('Accesorios'),
                 'icon' => '<i class="fas fa-computer-speaker"></i>'
-            ],
-
-            [
-                'name' => 'Moda',
-                'slug'=> Str::slug('Moda'),
-                'icon' => '<i class="fas fa-tshirt"></i>',
             ],
         ];
 
         foreach ($categories as $category){
             $category = Category::factory(1)->create($category)->first();
 
-            $brands = Brand::factory(4)->create();
+            $brands = Brand::factory(1)->create();
             
             foreach ($brands as $brand){
                 $brand->categories()->attach($category->id);
